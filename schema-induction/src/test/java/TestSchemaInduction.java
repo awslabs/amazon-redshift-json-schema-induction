@@ -42,7 +42,7 @@ public class TestSchemaInduction {
 
         RedshiftDDLGenerator redshiftDDLGenerator = new RedshiftDDLGenerator();
 
-        String ddl = redshiftDDLGenerator.generate(builder.getRoot(),"FHIR_TEST_DB.Claims", "s3://datamaker-test-base-accou-testusersbucketd1f721f1-itw8jgdqvjtn/FHIR/fhirbase-demo/claims-1", true);
+        String ddl = redshiftDDLGenerator.generate(builder.getRoot(),"FHIR_TEST_DB.Claims", "s3://bucket/FHIR/fhirbase-demo/claims-1", true);
         System.out.println(ddl);
 
         JsonSchemaGenerator schemaGenerator = new JsonSchemaGenerator();

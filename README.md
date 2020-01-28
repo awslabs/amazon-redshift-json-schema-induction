@@ -1,4 +1,4 @@
-#What?
+#Description
 
 This library provide an API and Cli utility to perform schema induction on JSON data. 
 In addition , it can generate DDL for Redshift external tables to allow user to perform PartiQL queries over the data in the table.
