@@ -1,0 +1,5 @@
+/schema-induction/target/
+/schema-induction/dependency-reduced-pom.xml
+/schema-induction/schema-induction.iml
+/aws.json-schema-induction.iml
+/amazon-redshif-json-schema-induction.iml
