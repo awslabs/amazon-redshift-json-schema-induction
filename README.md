@@ -1,11 +1,11 @@
-#Description
+# Description
 
 This library provide an API and Cli utility to perform schema induction on JSON data. 
 In addition , it can generate DDL for Redshift external tables to allow user to perform PartiQL queries over the data in the table.
 Last , the library can generate a json tree to represent the learned schema of the data and annotate it with types from the formal 
 schema of the data (if one exists)
 
-#CLI Usage
+# CLI Usage
 
         java -jar aws-json-schema-induction.jar 
                                 [-ah] [-c=<s3>] [-d=<outDdlFile>] -i=<inputFile> 
