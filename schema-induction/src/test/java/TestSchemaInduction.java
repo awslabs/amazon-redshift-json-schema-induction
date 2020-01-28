@@ -28,7 +28,7 @@ public class TestSchemaInduction {
         boolean isArray = true;
         InputStreamReader in = new InputStreamReader(new FileInputStream(dataFile), "UTF-8");
         JsonStructureBuilder builder = new JsonStructureBuilder(isArray);
-        JsonPathsReader reader = new JsonPathsReader(List.of(builder));
+        JsonPathsReader reader = new JsonPathsReader(builder);
 
         reader.readStream(in, isArray);
 
@@ -58,7 +58,7 @@ public class TestSchemaInduction {
         boolean isArray = false;
         InputStreamReader in = new InputStreamReader(new FileInputStream(dataFile), "UTF-8");
         JsonStructureBuilder builder = new JsonStructureBuilder(isArray);
-        JsonPathsReader reader = new JsonPathsReader(List.of(builder));
+        JsonPathsReader reader = new JsonPathsReader(builder);
 
         reader.readStream(in, isArray);
 

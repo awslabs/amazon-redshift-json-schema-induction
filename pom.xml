@@ -69,8 +69,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <source>13</source> <!-- 1.8,1.9,1.10,11,12,13 -->
-                    <target>13</target>
+                    <source>8</source> <!-- 1.8,1.9,1.10,11,12,13 -->
+                    <target>8</target>
                 </configuration>
             </plugin>
 

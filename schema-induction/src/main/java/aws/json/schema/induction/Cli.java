@@ -8,11 +8,13 @@ import com.amazonaws.services.s3.AmazonS3URI;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import javafx.scene.shape.Path;
 import org.apache.log4j.Logger;
 import picocli.CommandLine;
 import picocli.CommandLine.Option;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cli {
@@ -99,7 +101,8 @@ public class Cli {
         }
 
         JsonStructureBuilder builder = new JsonStructureBuilder(opt.isArray);
-        JsonPathsReader reader = new JsonPathsReader(List.of(builder));
+
+        JsonPathsReader reader = new JsonPathsReader(builder);
 
         reader.readStream(inStream, opt.isArray);
         logger.info("total number of unique paths: " + builder.getPaths().size());

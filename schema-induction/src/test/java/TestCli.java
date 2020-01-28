@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class TestCli {
     @BeforeEach
@@ -30,14 +32,15 @@ public class TestCli {
     }
     @Test
     public void readClaims() {
-        List<String> args = List.of("-i ", "../data/fhir/claims1.json",
-                "-s", "target/tmp/claims_tree.txt",
+        List<String> args = Stream.of("-i ", "../data/fhir/claims.json",
+                "-s", "target/tmp/claims_tree.json",
                 "-d", "target/tmp/claims.ddl",
                 "-c", "profile",
                 "-t", "FHIR_TEST_DB.Claims",
                 "-l", "target/tmp/json.json",
                 "-r", "us-east-1",
-                "-a");
+                "-root", "Claim",
+                "-a").collect(Collectors.toList());
         int exitCode = 0;
         try {
             exitCode = new Cli().run(args.toArray(new String[0]));
@@ -52,7 +55,7 @@ public class TestCli {
 
     @Test
     public void testHelp() throws Exception {
-        List<String> args = List.of("-h");
+        List<String> args = Stream.of("-h").collect(Collectors.toList());
 
         int exitCode = new Cli().run(args.toArray(new String[0]));
         Assertions.assertEquals(0, exitCode);

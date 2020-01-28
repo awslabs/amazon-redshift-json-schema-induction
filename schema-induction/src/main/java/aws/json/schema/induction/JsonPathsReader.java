@@ -5,6 +5,7 @@ import com.google.gson.stream.JsonToken;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 
 public class JsonPathsReader {
@@ -13,6 +14,11 @@ public class JsonPathsReader {
 
     public JsonPathsReader(List<PathListener> listeners) {
         this.listeners = listeners;
+    }
+
+    public JsonPathsReader(JsonStructureBuilder builder) {
+        this.listeners = new ArrayList<PathListener>();
+        listeners.add(builder);
     }
 
     private void notifyPath(String path, JsonToken type) {
